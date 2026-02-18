@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <Script>
+        var a = ["A","B","C","D","E"];
+        console.log(a)
+        a.splice(3,2,"F","G");
+        console.log(a);
+
+
+         var b = ["A","B","C","D","E"];
+         console.log(b)
+         b.splice(5,0,"F","G")
+         console.log(b)
+
+
+         //join
+          var c = ["A","B","C","D","E"];
+          console.log(c);
+          let d = c.join(",");
+          console.log(d);
+          document.write(d);
+
+
+         //concat
+         var e = ["A","B","C","D"];
+         var f = ["E","F","G","H"];
+         var g = ["I","J","K","L"];
+         let s = e.concat(f,g);
+         console.log(s);
+         document.write(s);
+
+    </Script>
+</body>
+</html>
