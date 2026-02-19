@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //switch,case,break,default(else)
+        let a = prompt();
+        let b = a.toUpperCase();
+        switch (b) {
+            case "A":
+                document.write("V");
+                break;
+            case "E":
+                document.write("V") 
+                break;
+            case "I":
+                document.write("V");
+                break;
+            case "O":
+                document.write("V")
+                break;
+            case "U":
+                document.write("V")
+                break;           
+        }
+
+        //Grade 
+        let marks = prompt("enter your number")
+        marks = Number(marks)
+        switch(true) {
+            case (marks>=80 && marks <100):
+                 document.write("A+");
+                 break;
+            case (marks >=70 && marks <100):
+                document.write("A");
+                break;
+           case(marks>=60 && marks <100):
+               document.write("B") ;
+               break;
+            case (marks >=50 && marks <100):
+                document,write("C");
+                break;   
+            case (marks>100):
+                document.write("Invalid");
+                break;
+            default:
+                document.write("F");   
+        }
+    </script>
+</body>
+</html>
