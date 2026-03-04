@@ -72,7 +72,7 @@
 
     for( let i=0;i<document.f.d.length; i++){
         if(document.f.d[i].checked) {
-            Department+= document.f.d[i].value + " ,";
+            Department= document.f.d[i].value;
         }
     }
 
@@ -83,7 +83,7 @@
     store.document.write("Email: " + email + "<br>");
     store.document.write("Student Address: " + address + "<br>");
     store.document.write("Round: " + round + "<br>");
-    store.document.write("Course Title: " + coursetitle);
+    store.document.write("Course Title: " + coursetitle  + "<br>");
     store.document.write("Department: " + Department);
 }
     </script>
