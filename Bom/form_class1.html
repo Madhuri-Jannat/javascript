@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+<body>
+    <form action="#" name="f">
+        ID: <br>
+        <input type="text" name="i"> <br>
+        
+        Name: <br>
+        <input type="text" name="n" id="">
+        <br>
+        last Name: <br>
+        <input type="text" name="l" id="">
+        <br>
+        Full Name: <br>
+        <input type="text" name="u" id=""> <br>
+        Email: <br>
+        <input type="email" name="e" id=""> <br>
+        Address: <br>
+        <textarea name="ad" id=""></textarea> <br>
+        Round: <br>
+        <select name="r" id="">
+            <option value="70">70</option>
+            <option value="71">71</option>
+            <option value="72">72</option>
+            <option value="73">73</option>
+        </select>
+        <br> <br>
+        Course title: <br>
+        <input type="checkbox" name="c" value="SSC">SSC
+        <input type="checkbox" name="c" value="HSC">HSC
+        <input type="checkbox" name="c" value="DIPLOMA">DIPLOMA <br>
+
+
+        Department: <br>
+        <input type="radio" name="d" value="CSE">CSE
+        <input type="radio" name="d" value="EEE">EEE
+        <input type="radio" name="d" value="CE">CE
+          <br>
+        <input type="submit" value="Sunbmit" onclick="info()">
+        <input type="reset" name="" id="">
+
+
+
+        
+    </form>
+
+    <script>
+        function info() {
+
+    let id = document.f.i.value;
+    let nam = document.f.n.value;
+    let lastname = document.f.l.value;
+    let fullname = document.f.u.value;
+    let email = document.f.e.value;
+    let address = document.f.ad.value;
+    let round = document.f.r.value;
+    let coursetitle = "";
+    let Department= "";
+    let store = window.open("", "", "width=400,height=400");
+
+    for(let j = 0; j < document.f.c.length; j++) {
+        if(document.f.c[j].checked){
+            coursetitle += document.f.c[j].value + ", ";
+        }
+    }
+
+
+    for( let i=0;i<document.f.d.length; i++){
+        if(document.f.d[i].checked) {
+            Department+= document.f.d[i].value + " ,";
+        }
+    }
+
+    store.document.write("Student ID: " + id + "<br>");
+    store.document.write("Student Name: " + nam + "<br>");
+    store.document.write("Last Name: " + lastname + "<br>");
+    store.document.write("Full Name: " + fullname + "<br>");
+    store.document.write("Email: " + email + "<br>");
+    store.document.write("Student Address: " + address + "<br>");
+    store.document.write("Round: " + round + "<br>");
+    store.document.write("Course Title: " + coursetitle);
+    store.document.write("Department: " + Department);
+}
+    </script>
+</body>
+</html>
