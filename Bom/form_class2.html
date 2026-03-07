@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>form</title>
+    <title>Form</title>
 </head>
-<body>
+<body> 
+    <fieldset>
+        <legend>Student Form</legend>
     <form action="#" name="f">
         ID: <br>
         <input type="text" name="i"> <br>
@@ -22,24 +24,24 @@
         <input type="email" name="e" id=""> <br>
         Address: <br>
         <textarea name="ad" id=""></textarea> <br>
-        Round: <br>
+        Course: <br>
         <select name="r" id="">
-            <option value="70">70</option>
-            <option value="71">71</option>
-            <option value="72">72</option>
-            <option value="73">73</option>
+            <option value="MBA">MBA</option>
+            <option value="BBA">BBA</option>
+            <option value="MSC">MSC</option>
+            <option value="DIPLOMA">DIPLOMA</option>
         </select>
         <br> <br>
-        Course title: <br>
-        <input type="checkbox" name="c" value="SSC">SSC
-        <input type="checkbox" name="c" value="HSC">HSC
-        <input type="checkbox" name="c" value="DIPLOMA">DIPLOMA <br>
+        Subject: <br>
+        <input type="checkbox" name="c" value="English">English
+        <input type="checkbox" name="c" value="Bangla">Bangla
+        <input type="checkbox" name="c" value="Math">Math <br>
 
 
-        Department: <br>
-        <input type="radio" name="d" value="CSE">CSE
-        <input type="radio" name="d" value="EEE">EEE
-        <input type="radio" name="d" value="CE">CE
+        Gender: <br>
+        <input type="radio" name="d" value="Female">Female
+        <input type="radio" name="d" value="Male">Male
+        <input type="radio" name="d" value="Others">Others
           <br>
         <input type="submit" value="Sunbmit" onclick="info()">
         <input type="reset" name="" id="">
@@ -48,7 +50,9 @@
 
         
     </form>
-
+    
+    </fieldset>
+    
     <script>
         function info() {
 
@@ -58,21 +62,21 @@
     let fullname = document.f.u.value;
     let email = document.f.e.value;
     let address = document.f.ad.value;
-    let round = document.f.r.value;
-    let coursetitle = "";
-    let Department= "";
+    let Course = document.f.r.value;
+    let Subject = "";
+    let Gender= "";
     let store = window.open("", "", "width=400,height=400");
 
     for(let j = 0; j < document.f.c.length; j++) {
         if(document.f.c[j].checked){
-            coursetitle += document.f.c[j].value + ", ";
+            Subject+= document.f.c[j].value + ", ";
         }
     }
 
 
     for( let i=0;i<document.f.d.length; i++){
         if(document.f.d[i].checked) {
-            Department= document.f.d[i].value;
+            Gender= document.f.d[i].value;
         }
     }
 
@@ -82,12 +86,11 @@
     store.document.write("Full Name: " + fullname + "<br>");
     store.document.write("Email: " + email + "<br>");
     store.document.write("Student Address: " + address + "<br>");
-    store.document.write("Round: " + round + "<br>");
-    store.document.write("Course Title: " + coursetitle  + "<br>");
-    store.document.write("Department: " + Department + "<br>");
-     store.document.write('<input type="button" onclick = self.close(); value="close me"/>')
+    store.document.write("Course: " + Course + "<br>");
+    store.document.write("Subject: " + Subject  + "<br>");
+    store.document.write("Gender: " + Gender + "<br>");
+    store.document.write('<input type="button" onclick = self.close(); value="close me"/>')
     store.document.write('<input type="button" onclick = self.close(); value="Print"/>')
-
 }
     </script>
 </body>
