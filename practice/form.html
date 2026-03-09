@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>
+            Student Form
+        </legend>
+        <form name="f">
+            Name: <br>
+            <input type="text" name="n" id=""> <br>
+            email: <br>
+            <input type="text" name="e" id=""> <br>
+            Course: <br>
+            <input type="checkbox" name="c" value="HTML">HTML
+            <input type="checkbox" name="c" value="JavaScript">JavaScript
+            <input type="checkbox" name="c" value="PHP">PHP
+            <br>
+            Gender: <br>
+            <input type="radio" name="Gender" value="Male"> Male
+            <input type="radio" name="Gender" value="Female"> Female
+            <br>
+            Department: <br>
+            <select name="r" id="">
+                <option value="CSE">CSE</option>
+                <option value="EEE">EEE</option>
+                <option value="BBA">BBA</option>
+            </select>
+            <br>
+            <input type="submit" onclick="info()">
+            <input type="reset" name="" id="">
+        </form>
+        </fieldset>
+        <script>
+            function info() {
+                let name = document.f.n.value;
+                let email = document.f.e.value;
+                let Department = document.f.r.value;
+                let c  = " ";
+                let Gender = " ";
+
+
+                let store = window.open("", "", "width=400,height=400");
+
+                for (let j = 0; j < document.f.c.length; j++) {
+                    if (document.f.c[j].checked) {
+                        c += document.f.c[j].value + ", ";
+                    }
+                }
+
+
+                for (let i = 0; i < document.f.Gender.length; i++) {
+                    if (document.f.Gender[i].checked) {
+                        Gender = document.f.Gender[i].value;
+                    }
+                }
+                store.document.write("Student name: " + name + "<br>");
+                store.document.write("Student email: " + email + "<br>");
+                store.document.write("Student Course: " + c + "<br>");
+                store.document.write("Department: " + Department + "<br>");
+                store.document.write("Gender: " + Gender + "<br>");
+                store.document.write('<input type="button" onclick = self.close(); value="close me"/>')
+                store.document.write('<input type="button" onclick = self.close(); value="Print"/>')
+            }
+        </script>
+    
+
+</html>

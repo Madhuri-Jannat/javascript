@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validation</title>
+</head>
+<body>
+    <form action="" name="myform" onsubmit="return validateform()">
+     name: <input type="text" name="name" id=""> <br> <br>
+     email: <input type="text" name="email" id=""> <br> <br>
+
+     password: <input type="text" name="password"> <br> <br>
+     <input type="submit" name="" value="submit">
+    </form>
+    <script>
+        function validateform() {
+         var name = document.myform.name.value;
+        var email=document.myform.email.value;
+        var password=document.myform.password.value;
+
+
+        // name and password validation
+
+        if(name==""){
+            alert("name must be fill out");
+            return false;
+        }
+
+        if(password.length < 4|| password.length> 8){
+            alert("password must be between 4 and 8 characters ");
+            return false;
+        }
+        // email validation
+        if(email=="") {
+         alert("must be fill out");
+         return false;
+        }
+         if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {
+                alert("Invalid email");
+                return false;
+            }
+
+
+            // open new window
+            var newWindow = window.open("", "", "width=400,height=300");
+
+           newWindow.document.write("<h2>Form Submitted Successfully!</h2>");
+           newWindow.document.write("name:" +name +"<br>");
+           newWindow.document.write("email:" +email +"<br>");
+           newWindow.document.write("password:" +password +"<br>");
+
+        }
+    </script>
+</body>
+</html>
