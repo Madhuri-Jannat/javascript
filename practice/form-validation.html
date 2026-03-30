@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="width: 300px;">
+    <fieldset>
+        <legend>Form validation</legend>
+        <form action="#" name="form">
+            name : <br>
+            <input type="text" name="name" id=""> <br> <br>
+            email : <br>
+            <input type="text" name="email" id=""> <br> <br>
+            password : <br>
+            <input type="text" name="password" id=""> <br> <br>
+            curse: <br>
+            <input type="checkbox" name="curse" value="HTML">HTML
+            <input type="checkbox" name="curse" value="Javascript">Javascript
+            <input type="checkbox" name="curse" value="PHP">PHP
+            <br> <br>
+            gender : <br>
+            <input type="radio" name="gender" value="Female">Female
+            <input type="radio" name="gender" value="male">male
+            <br> <br>
+            department : <br>
+            <select name="dpt" id="">
+                <option  name ="dpt" value="CSE">CSE</option>
+                <option  name ="dpt" value="EEE">EEE</option>
+                <option  name ="dpt" value="CE">CE</option>
+            </select>
+            <br> <br>
+            <input type="submit" name="submit"  onclick="return form_validation()">
+            <input type="reset" name = "reset">
+        </form>
+    </fieldset>
+    </div>
+
+    <script>
+        function form_validation(){
+            let name = document.form.name.value;
+            let email = document.form.email.value;
+            let password=document.form.password.value;
+            let curse ="";
+            let gender ="";
+            let dpt =document.form.dpt.value;
+            
+            
+            if(name==""){
+                alert("please enter your name")
+                return false;
+            }
+
+            if(email==""){
+                alert("enter your email")
+                return false;
+            }
+            if(email.indexOf("@")== -1 || email.indexOf(".")== -1){
+                alert("your email is invalid")
+                return false;
+            }
+            if(password==""){
+                alert("please enter your password")
+                return false;
+            }
+            if(password.length<5 || password.length>=8){
+                alert("password length must be minimum 5 and maximum 8 character")
+                return false;
+            }
+            for(let i=0; i<document.form.curse.length;i++){
+                if(document.form.curse[i].checked)
+                curse += document.form.curse[i].value+ ""
+            }
+            for( let i=0;i<document.form.gender.length;i++){
+            if(document.form.gender[i].checked)
+            gender = document.form.gender[i].value+ ""
+            }
+
+            store =window.open("","","width=300,height=300");
+
+            store.document.write("Student name :" + name + "<br>");
+            store.document.write("email :" + email + "<br>");
+            store.document.write("password :" + password + "<br>");
+            store.document.write("curse :" + curse + "<br>");
+            store.document.write("gender :" + gender + "<br>");
+            store.document.write("dpt :" + dpt + "<br>");
+        }
+    </script>
+</body>
+</html>

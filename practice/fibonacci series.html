@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num=parseInt(prompt("enter your value"));
+        let firstNumber =0;
+        let SecondNumber=1;
+        let next;
+
+        document.write("The fibonacci series is");
+        for(i=1;i<=num;i++){
+            document.write(firstNumber +"");
+            next= firstNumber+SecondNumber;
+            firstNumber=SecondNumber;
+            SecondNumber=next;
+        }
+    </script>
+</body>
+</html>
